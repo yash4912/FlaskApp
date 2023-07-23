@@ -1,0 +1,17 @@
+<!-- templates/create_post.html -->
+{% extends 'base.html' %}
+
+{% block title %}Create Post{% endblock %}
+
+{% block content %}
+<h2>Create New Post</h2>
+<form method="POST" action="{{ url_for('create_post') }}">
+    {{ form.csrf_token }}
+    <label for="title">Title</label>
+    {{ form.title }}
+    <label for="content">Content</label>
+    {{ form.content }}
+    <button type="submit">Create Post</button>
+</form>
+{% endblock %}
+
